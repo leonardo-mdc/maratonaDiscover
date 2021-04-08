@@ -2,7 +2,7 @@ module.exports = {
 
   remainingDays(job) {
     // cálculo de tempo restante
-    const remainingDays = (job["total-hours"] / job["daily-hours"]).toFixed()
+    const remainingDays = (job.total_hours / job.daily_hours).toFixed()
 
     const createdDate = new Date(job.created_at)
     const dueDay = createdDate.getDate() + Number(remainingDays)
@@ -16,5 +16,5 @@ module.exports = {
     // restam x dias
     return dayDiff
   },
-  calculateBudget: (job, valueHour) => valueHour * job["total-hours"]
+  calculateBudget: (job, valueHour) => valueHour * job.total_hours
 }
